@@ -1,0 +1,31 @@
+graph TD
+    subgraph Ingestion
+        CSV[qa.csv]
+        PDF1[canonical Q&A PDF]
+        QP[Question paper PDF]
+        SA[Suggested answer PDF]
+        CLI[ingest_cli.py]
+
+        CSV --> IC[ingestion_csv.py]
+        PDF1 --> IP[ingestion_pdf.py]
+        QP --> CONV[qp_sa_converter.py]
+        SA --> CONV
+        CONV --> IP
+        CLI --> IP
+        IC --> EMB[embedding_backend.py]
+        IP --> EMB
+        EMB --> QD[(Qdrant<br/>student_validator_qa)]
+    end
+
+    subgraph "Query / Grading"
+        Client -->|POST /validate| Main[api/main.py]
+        Main --> Ret[retrieval/retriever.py]
+        Ret --> EMB
+        Ret --> QD
+        Main --> Rules[rules_loader.py]
+        Main --> Prompt[prompt_compose.py]
+        Main --> LLM[verdict_llm.py]
+        LLM -->|LLM_PROVIDER=openrouter| OR[OpenRouter API]
+        LLM -->|LLM_PROVIDER=gemini| GEM[Gemini API]
+        Main --> Client
+    end

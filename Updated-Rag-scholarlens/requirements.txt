@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+pydantic
+python-dotenv
+qdrant-client
+pandas
+llama-index
+llama-index-embeddings-huggingface
+sentence-transformers
+requests
+pyyaml
+markdown
+weasyprint
+pypdf
+pytest
+tiktoken

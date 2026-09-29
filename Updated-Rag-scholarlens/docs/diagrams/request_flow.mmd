@@ -1,0 +1,32 @@
+sequenceDiagram
+    participant U as Client
+    participant API as api/main.py
+    participant RET as retriever.py
+    participant EMB as embedding_backend
+    participant QD as Qdrant
+    participant RULES as rules_loader.py
+    participant PROMPT as prompt_compose.py
+    participant LLM as verdict_llm.py
+    participant PROVIDER as OpenRouter / Gemini
+
+    U->>API: POST /validate {question, student_answer}
+    API->>RET: retrieve_similar_questions(question, top_k)
+    RET->>EMB: get_text_embedding(question)
+    EMB-->>RET: vector
+    RET->>QD: query_points(vector, limit=top_k)
+    QD-->>RET: matches [question_text, answer_text, subject, similarity]
+    RET-->>API: matches
+    API->>API: filter matches where similarity > SIMILARITY_THRESHOLD
+    alt no match above threshold
+        API-->>U: 404 "No semantically similar question found"
+    else match(es) found
+        API->>RULES: load_rules_yaml()
+        RULES-->>API: rubric as markdown
+        API->>PROMPT: compose_prompt(question, answers, student_answer, rubric)
+        PROMPT-->>API: grading prompt
+        API->>LLM: get_llm_verdict(prompt)
+        LLM->>PROVIDER: chat/generate request (per LLM_PROVIDER)
+        PROVIDER-->>LLM: verdict text
+        LLM-->>API: verdict
+        API-->>U: 200 {verdict, exact_matches}
+    end

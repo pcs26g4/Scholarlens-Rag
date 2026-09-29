@@ -1,0 +1,25 @@
+# Environment
+.env
+*.env
+
+# Qdrant local data
+qdrant_data/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# PDFs (large binary files)
+*.pdf
+
+# IDE
+.vscode/
+.idea/

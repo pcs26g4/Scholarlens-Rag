@@ -1,0 +1,199 @@
+# rules:
+#   - id: issue_identification
+#     name: Identification of Legal Issues
+#     description: "Accurately identifies the principal and subsidiary legal issues raised by the factual scenario in accordance with standard issue-spotting conventions used in business law assessment."
+#     weight: 0.12
+#   - id: relevant_law_citation
+#     name: Citation of Relevant Law
+#     description: "Correctly states and cites the applicable statutory provisions, regulations, or legal principles relevant to each identified issue, reflecting standard legal citation conventions."
+#     weight: 0.18
+#   - id: application_to_facts
+#     name: Application of Law to Facts
+#     description: "Applies the identified legal rules to the specific facts of the problem, demonstrating how the law operates in the given business context rather than merely stating abstract propositions."
+#     weight: 0.20
+#   - id: logical_reasoning
+#     name: Logical Reasoning and Argumentation
+#     description: "Constructs a coherent, step-by-step argument that moves logically from premise to conclusion, avoiding contradictions and unsupported assertions, consistent with standard legal reasoning rubrics."
+#     weight: 0.10
+#   - id: precedent_case_law
+#     name: Use of Relevant Precedent
+#     description: "Draws upon pertinent judicial precedent or case law where appropriate, distinguishing or analogizing cases to support the analysis, as expected in common law examination standards."
+#     weight: 0.10
+#   - id: structure_clarity
+#     name: Clarity and Organizational Structure
+#     description: "Presents the answer in a clear, well-organized format (e.g., IRAC/CREAC), with concise paragraphs and effective signposting that aids readability, per standard legal-writing assessment criteria."
+#     weight: 0.10
+#   - id: completeness_coverage
+#     name: Completeness of Coverage
+#     description: "Addresses all material aspects of the question, including counter-arguments, alternative liabilities, and remedies, without omitting significant legal or factual dimensions required by the rubric."
+#     weight: 0.08
+#   - id: conclusion_outcome
+#     name: Correct Conclusion and Practical Outcome
+#     description: "Reaches a legally sound conclusion for each issue that flows from the preceding analysis and, where appropriate, identifies practical business outcomes or remedial consequences."
+#     weight: 0.05
+#   - id: factual_distinction
+#     name: Factual Distinction and Relevance
+#     description: "Distinguishes legally material facts from background or irrelevant details, and explains the significance of key facts to the legal analysis, as required by standard fact-application rubrics."
+#     weight: 0.04
+#   - id: legal_terminology
+#     name: Use of Professional Legal Terminology
+#     description: "Employs accurate legal terminology and maintains a professional, objective tone throughout the answer, reflecting conventions of legal academic writing and examiner expectations."
+#     weight: 0.03
+#   - id: spelling_accuracy
+#     name: Spelling Accuracy
+#     description: "Words are spelled correctly throughout the answer. Note any misspelled words specifically (quoting the misspelled word and the correct spelling) rather than commenting on spelling in general terms."
+#     weight: 0.05
+#   - id: grammatical_correctness
+#     name: Grammatical Correctness
+#     description: "The answer is free of grammatical errors -- correct verb tense, subject-verb agreement, article usage, and punctuation. Note specific grammatical mistakes found, not just a general impression."
+#     weight: 0.05
+#   - id: sentence_formation
+#     name: Sentence Formation
+#     description: "Sentences are complete, well-formed, and clearly convey their intended meaning, avoiding run-ons, fragments, and awkward or confusing phrasing."
+#     weight: 0.05
+rules:
+  - id: issue_identification
+    name: Identification of Legal Issues
+    description: >
+      Correctly identifies the principal and subsidiary legal issues raised
+      by the factual scenario. Distinguishes between primary and ancillary
+      legal questions relevant to the dispute.
+    weight: 0.10
+
+  - id: relevant_law_citation
+    name: Citation of Relevant Law
+    description: >
+      Correctly identifies and cites the applicable statutory provisions,
+      sections, legal principles, doctrines, and rules governing the issue.
+      References should be legally accurate and relevant.
+    weight: 0.12
+
+  - id: statutory_accuracy
+    name: Accuracy of Statutory References
+    description: >
+      Ensures that section numbers, legal provisions, statutory terminology,
+      and legal concepts are correctly stated without misquotation,
+      misinterpretation, or incorrect cross-referencing.
+    weight: 0.08
+
+  - id: legal_principle_explanation
+    name: Explanation of Legal Principles
+    description: >
+      Clearly explains the applicable legal principles before applying them.
+      Demonstrates conceptual understanding rather than merely reproducing
+      statutory language.
+    weight: 0.08
+
+  - id: application_to_facts
+    name: Application of Law to Facts
+    description: >
+      Applies the identified legal principles directly to the facts of the
+      problem. Explains how each relevant fact affects the legal outcome
+      instead of providing only theoretical discussion.
+    weight: 0.18
+
+  - id: logical_reasoning
+    name: Logical Legal Reasoning
+    description: >
+      Presents a coherent sequence of reasoning connecting facts, law,
+      analysis, and conclusion. Arguments should be internally consistent,
+      logically valid, and supported by legal principles.
+    weight: 0.08
+
+  - id: precedent_case_law
+    name: Use of Judicial Precedents
+    description: >
+      Appropriately cites or discusses relevant judicial precedents or case
+      law where applicable. Correctly distinguishes or analogizes precedents
+      to support the legal analysis.
+    weight: 0.05
+
+  - id: counter_arguments
+    name: Consideration of Alternative Views
+    description: >
+      Recognizes alternative legal interpretations, counter-arguments,
+      exceptions, defenses, or limitations where relevant and explains why
+      one interpretation is preferable.
+    weight: 0.04
+
+  - id: completeness_coverage
+    name: Completeness of Coverage
+    description: >
+      Addresses every material issue raised in the question, including rights,
+      liabilities, remedies, exceptions, and consequences without omitting
+      significant legal aspects.
+    weight: 0.08
+
+  - id: conclusion_outcome
+    name: Legally Sound Conclusion
+    description: >
+      Arrives at a legally justified conclusion that naturally follows from
+      the preceding legal analysis. The conclusion should directly answer the
+      question asked.
+    weight: 0.05
+
+  - id: factual_relevance
+    name: Identification of Material Facts
+    description: >
+      Distinguishes legally significant facts from background information and
+      explains why those facts influence the legal outcome.
+    weight: 0.04
+
+  - id: irac_structure
+    name: IRAC / CREAC Organization
+    description: >
+      Organizes the answer using a structured legal reasoning format such as
+      IRAC or CREAC with clear issue identification, legal rule, application,
+      and conclusion.
+    weight: 0.04
+
+  - id: clarity_and_coherence
+    name: Clarity and Organization
+    description: >
+      Presents ideas in a clear, logical, and well-organized manner using
+      appropriate headings, paragraphs, transitions, and signposting.
+    weight: 0.03
+
+  - id: legal_terminology
+    name: Professional Legal Terminology
+    description: >
+      Uses accurate legal terminology, statutory expressions, and technical
+      vocabulary while maintaining a formal legal writing style.
+    weight: 0.03
+
+  - id: keyword_coverage
+    name: Coverage of Essential Legal Keywords
+    description: >
+      Includes important statutory terms, legal phrases, doctrines, and
+      keywords expected for the topic. Uses legally recognized terminology
+      instead of vague or colloquial expressions.
+    weight: 0.04
+
+  - id: practical_implications
+    name: Practical Business Consequences
+    description: >
+      Explains the commercial, contractual, regulatory, or legal consequences
+      arising from the legal analysis wherever appropriate.
+    weight: 0.02
+
+  - id: spelling_accuracy
+    name: Spelling Accuracy
+    description: >
+      Uses correct spelling throughout the answer. Any spelling mistakes
+      should be specifically identified along with their correct forms.
+    weight: 0.01
+
+  - id: grammatical_correctness
+    name: Grammar and Language Accuracy
+    description: >
+      Maintains grammatically correct sentences with proper punctuation,
+      agreement, tense consistency, and article usage. Specific errors should
+      be identified where present.
+    weight: 0.02
+
+  - id: sentence_formation
+    name: Sentence Formation
+    description: >
+      Uses complete, concise, and well-constructed sentences that clearly
+      communicate legal reasoning without ambiguity or unnecessary repetition.
+    weight: 0.01
